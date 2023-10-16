@@ -14,11 +14,11 @@
                 justify-content:center;
                 justify-items:center;
                 text-align:center;
-            }
+                }
             .column{
                 display:flex;
                 flex-direction:column;
-            }
+                }
             .row{  
                 display:flex;
                 flex-direction:row;
@@ -31,36 +31,36 @@
             .RIGHT,.rightText{
                 float:left;
                 font-size:70px;
-            }
+                }
             .wrong,.wrongText{
                 float:right;
                 font-size:70px;
-            }
+                }
             #randomLetter{
                 color: rgb(167, 60, 255);
-            }
+                }
             .wrong{
                 color:red;
-            }
+                }
             .RIGHT{
                 color: rgb(35, 201, 35);
-            }
+                }
             #randomLetter{
                 font-size:250px;
-            }
-        </Style>
-    </head>
-    <body>
+                }
+      </Style>
+ </head>
+ <body>
     <div>
-    <p class="rightText">RIGHT : </p>
-    <p id="RIGHT" class="RIGHT">0</p>
-    <p id="wrong" class="wrong">-1</p>
-    <p class="wrongText">WRONG : </p>
+       <p class="rightText">RIGHT : </p>
+       <p id="RIGHT" class="RIGHT">0</p>
+       <p id="wrong" class="wrong">-1</p>
+       <p class="wrongText">WRONG : </p>
     </div>
-        <b id='randomLetter'>A-Z</b>
+       <b id='randomLetter'>A-Z</b>
     <br>
     <div  id="start"></div>
-        <script>
+    <script>
             let Letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             function clr(a){
                 const res1=document.getElementById('randomLetter').innerHTML;
@@ -70,8 +70,8 @@
                 }
                 else
                 {
-                let totalWrong=document.getElementById('wrong').innerHTML;
-                document.getElementById('wrong').innerHTML=Number(totalWrong)+1;
+                    let totalWrong=document.getElementById('wrong').innerHTML;
+                    document.getElementById('wrong').innerHTML=Number(totalWrong)+1;
                 }
                 let randomnum=Math.random()*26;
                 const singleLetter=Letters.charAt(randomnum);
@@ -81,13 +81,13 @@
             let count=0;
             for(let i=0;i<26;i++){
                 count++;
-            autoBox+="<b id=\""+Letters.charAt(i)+"\" onclick=\"clr('"+Letters.charAt(i)+"')\">"+Letters.charAt(i)+"</b>";
-            if(count==4){
-                autoBox+="</div><div class=\"row\">";
+                autoBox+="<b id=\""+Letters.charAt(i)+"\" onclick=\"clr('"+Letters.charAt(i)+"')\">"+Letters.charAt(i)+"</b>";
+                if(count==4){
+                    autoBox+="</div><div class=\"row\">";
                     count=0;
-            }            
+                }            
             }
             document.getElementById('start').innerHTML=autoBox;
-        </script>
-    </body>
+      </script>
+   </body>
 </html>
